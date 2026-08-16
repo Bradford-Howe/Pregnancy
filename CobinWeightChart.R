@@ -1,4 +1,4 @@
-a = read.table("CorbinWeight_8-13.csv",sep=",",header=T)
+a = read.table("Corbin's Weight - For CSV Export.csv",sep=",",header=T)
 
 library(tidyverse)
 library(lubridate)
@@ -14,17 +14,10 @@ a <- a %>%
          mdy()
    )
 
-a$Date
-a[1:10,]
-library(tidyverse)
-library(lubridate)
-
 # Assume your data frame is already called `df` and has columns:
 #   Date          (character or factor with values like "04-28-26", "5-6-26", etc.)
 #   Scale.reading (numeric)
 
-
-dmy(a[1:19,"Date"])
 # 1. Make sure Date is a proper Date object
 a <- a %>%
    mutate(Date = as_date(Date))   # handles both "04-28-26" and "5-6-26"
@@ -48,3 +41,5 @@ ggplot(plot_a, aes(x = Date, y = Scale.reading)) +
    labs(x = NULL, y = "Scale Reading (lbs)", title = "Scale Reading") +
    theme_minimal(base_size = 12) +
    theme(axis.text.x = element_text(angle = 45, hjust = 1))
+
+WeightPlot = recordPlot()

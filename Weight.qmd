@@ -1,0 +1,27 @@
+---
+title: "Weight"
+format: docx
+execute:
+   echo: false
+   warning: false
+---
+
+```{r}
+library(knitr)
+library(car)
+library(tidyverse)
+```
+
+
+```{r}
+load("ForQuarto.Rdata")
+```
+
+```{r}
+WeightPlot
+kable(a)
+```
+
+
+
+
